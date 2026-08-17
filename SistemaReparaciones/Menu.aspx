@@ -5,18 +5,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="utf-8" />
-    <title>Menú principal</title>
+    <title>Menú Principal</title>
 
     <style>
         body {
+            margin: 0;
             font-family: Arial;
             background-color: #eef2f5;
-            margin: 0;
         }
 
         .contenedor {
-            width: 700px;
-            margin: 80px auto;
+            width: 760px;
+            margin: 70px auto;
             background-color: white;
             padding: 35px;
             border-radius: 12px;
@@ -26,30 +26,45 @@
 
         h1 {
             color: #1f4e79;
+            margin-bottom: 10px;
         }
 
         .bienvenida {
-            font-size: 18px;
+            display: block;
             margin-bottom: 30px;
+            font-size: 18px;
         }
 
-        .boton-menu {
-            display: inline-block;
+        .menu {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .opcion {
             width: 180px;
-            padding: 15px;
-            margin: 10px;
+            padding: 18px;
+            text-decoration: none;
             background-color: #1f4e79;
             color: white;
-            text-decoration: none;
-            border-radius: 6px;
+            border-radius: 8px;
+            transition: 0.2s;
         }
 
-        .boton-menu:hover {
+        .opcion:hover {
             background-color: #163a5c;
+            transform: translateY(-2px);
         }
 
         .cerrar {
+            margin-top: 25px;
+            padding: 12px 25px;
             background-color: #b33a3a;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
         }
 
         .cerrar:hover {
@@ -72,27 +87,27 @@
             CssClass="bienvenida">
         </asp:Label>
 
-        <br />
+        <div class="menu">
 
-        <a href="Usuarios.aspx" class="boton-menu">
-            Usuarios
-        </a>
+            <a href="Usuarios.aspx" class="opcion">
+                Usuarios
+            </a>
 
-        <a href="Equipos.aspx" class="boton-menu">
-            Equipos
-        </a>
+            <a href="Equipos.aspx" class="opcion">
+                Equipos
+            </a>
 
-        <a href="Tecnicos.aspx" class="boton-menu">
-            Técnicos
-        </a>
+            <a href="Tecnicos.aspx" class="opcion">
+                Técnicos
+            </a>
 
-        <br />
+        </div>
 
         <asp:Button
             ID="btnCerrarSesion"
             runat="server"
             Text="Cerrar sesión"
-            CssClass="boton-menu cerrar"
+            CssClass="cerrar"
             OnClick="btnCerrarSesion_Click" />
 
     </div>
